@@ -23,6 +23,22 @@
       "category": "Educação",
       "price": 1900,
       "createdAt": "2023-04-09T16:25:58.355Z"
+    },
+    {
+      "description": "Papel",
+      "price": 15,
+      "category": "Estudos",
+      "type": "outcome",
+      "createdAt": "2023-04-13T00:05:04.540Z",
+      "id": 4
+    },
+    {
+      "description": "Sorvete",
+      "price": 10,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-04-13T00:54:51.940Z",
+      "id": 5
     }
   ]
 }
