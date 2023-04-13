@@ -47,3 +47,5 @@ export function SearchForm() {
     </SearchFormContainer>
   )
 }
+
+// export const SearchForm = memo(SearchFormComponent)
