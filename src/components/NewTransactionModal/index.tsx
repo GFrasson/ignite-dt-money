@@ -1,17 +1,23 @@
-import * as Dialog from "@radix-ui/react-dialog";
-import { ArrowCircleDown, ArrowCircleUp, X } from "phosphor-react";
-import { CloseButton, Content, Overlay, TransactionType, TransactionTypeButton } from "./styles";
-import * as zod from 'zod';
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useContext } from "react";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
+import * as Dialog from '@radix-ui/react-dialog'
+import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react'
+import {
+  CloseButton,
+  Content,
+  Overlay,
+  TransactionType,
+  TransactionTypeButton,
+} from './styles'
+import * as zod from 'zod'
+import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useContext } from 'react'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 const newTransactionFormSchema = zod.object({
   description: zod.string(),
   price: zod.number(),
   category: zod.string(),
-  type: zod.enum(['income', 'outcome'])
+  type: zod.enum(['income', 'outcome']),
 })
 
 type NewTransactionFormInputs = zod.infer<typeof newTransactionFormSchema>
@@ -24,12 +30,12 @@ export function NewTransactionModal() {
     register,
     handleSubmit,
     formState: { isSubmitting },
-    reset
+    reset,
   } = useForm<NewTransactionFormInputs>({
     resolver: zodResolver(newTransactionFormSchema),
     defaultValues: {
-      type: 'income'
-    }
+      type: 'income',
+    },
   })
 
   async function handleCreateNewTransaction(data: NewTransactionFormInputs) {
@@ -39,7 +45,7 @@ export function NewTransactionModal() {
       description,
       price,
       category,
-      type
+      type,
     })
 
     reset()
@@ -99,7 +105,7 @@ export function NewTransactionModal() {
             }}
           />
 
-          <button type="submit" disabled={isSubmitting} >
+          <button type="submit" disabled={isSubmitting}>
             Cadastrar
           </button>
         </form>

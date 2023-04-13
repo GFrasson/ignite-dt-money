@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import * as Dialog from '@radix-ui/react-dialog';
-import * as RadioGroup from '@radix-ui/react-radio-group';
+import styled from 'styled-components'
+import * as Dialog from '@radix-ui/react-dialog'
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
@@ -99,7 +99,7 @@ export const TransactionTypeButton = styled(
   cursor: pointer;
   border: 0;
   color: ${(props) => props.theme['gray-300']};
-  
+
   svg {
     color: ${(props) =>
       props.variant === 'income'
@@ -111,14 +111,14 @@ export const TransactionTypeButton = styled(
     transition: background-color 0.2s;
     background: ${(props) => props.theme['gray-600']};
   }
-  
+
   &[data-state='checked'] {
     color: ${(props) => props.theme.white};
     background: ${(props) =>
       props.variant === 'income'
         ? props.theme['green-500']
         : props.theme['red-500']};
-    
+
     svg {
       color: ${(props) => props.theme.white};
     }

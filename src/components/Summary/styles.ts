@@ -26,14 +26,16 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     justify-content: space-between;
     color: ${(props) => props.theme['gray-300']};
   }
-  
+
   strong {
     display: block;
     margin-top: 1rem;
     font-size: 2rem;
   }
 
-  ${(props) => props.variant === 'green' && css`
-    background: ${props.theme['green-700']};
-  `}
+  ${(props) =>
+    props.variant === 'green' &&
+    css`
+      background: ${props.theme['green-700']};
+    `}
 `
